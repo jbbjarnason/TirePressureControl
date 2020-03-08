@@ -1,0 +1,14 @@
+version: "3"
+services: 
+    talker:
+        container_name: talker
+        image: osrf/ros:eloquent-desktop
+        command: ros2 run demo_nodes_cpp talker
+    listener:
+        container_name: listener
+        image: osrf/ros:eloquent-desktop
+        command: ros2 run demo_nodes_cpp listener
+        depends_on: 
+            - talker
+        
+
